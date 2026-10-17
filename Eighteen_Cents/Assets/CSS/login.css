@@ -1,0 +1,179 @@
+/* =====================================
+   LOGIN WRAPPER  (mobile default: 384x924)
+===================================== */
+
+.login-wrap {
+    position: relative;
+    z-index: 10;
+
+    min-height: 100vh;
+    min-height: 100dvh; /* fixes mobile browser address-bar jump */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   LOGIN FORM
+===================================== */
+
+.login-form {
+    width: 100%;
+    max-width: 344px;           /* 384px screen - 40px side padding */
+
+    padding: 30px 24px;
+
+    background: rgba(255, 255, 255, 0.58);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(32, 36, 58, 0.15);
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.login-header h2 {
+    margin: 0;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    background: linear-gradient(90deg, #20243A 10%, #F44F1D 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+    margin: 8px 0 0;            /* removed the negative margin */
+
+    color: #20243A;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   INPUT GROUP
+===================================== */
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #20243A;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    min-height: 48px;           /* comfortable touch target */
+
+    padding: 12px 16px;
+    box-sizing: border-box;
+
+    border: 2px solid rgba(32, 36, 58, 0.2);
+    border-radius: 8px;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.55);
+    color: #20243A;
+
+    font-size: 16px;            /* prevents iOS auto-zoom on focus */
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(32, 36, 58, 0.5);
+}
+
+.input-group input:focus {
+    border-color: #F44F1D;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 4px rgba(244, 79, 29, 0.1);
+}
+
+
+/* =====================================
+   LOGIN BUTTON
+===================================== */
+
+.login-button {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(90deg, #20243A, #F44F1D);
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* hover only on devices that actually support hover (not touch) */
+@media (hover: hover) {
+    .login-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(32, 36, 58, 0.25);
+    }
+}
+
+
+/* =====================================
+   TABLET / DESKTOP  (scales UP from mobile)
+===================================== */
+
+@media (min-width: 601px) {
+
+    .login-form {
+        max-width: 500px;
+        padding: 45px;
+    }
+
+    .login-header {
+        margin-bottom: 35px;
+    }
+
+    .login-header h2 {
+        font-size: 30px;
+    }
+
+    .login-header p,
+    .input-group label {
+        font-size: 15px;
+    }
+
+}
